@@ -1,0 +1,52 @@
+<form action="/cms/create" method="POST" enctype="multipart/form-data" name="form-informacao" id="form-informacao" class="form-horizontal">
+    <div class="form-body">
+
+        <div class="form-group">
+            <label class="control-label col-md-3" for="titulo">
+                Título <span class="required">*</span>
+            </label>
+            <div class="col-md-5">
+                <input type="text" name="titulo" id="titulo" data-required="1" class="form-control" value="">
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label class="control-label col-md-3" for="texto">
+                Imagem <span class="required">*</span>
+            </label>
+
+            <div class="col-md-3">
+                <input type="file" name="file"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3" for="titulo">
+                Latitude <span class="required">*</span>
+            </label>
+            <div class="col-md-5">
+                <input type="text" name="latitude" id="titulo" data-required="1" class="form-control" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3" for="titulo">
+                Longitude <span class="required">*</span>
+            </label>
+            <div class="col-md-5">
+                <input type="text" name="longitude" id="titulo" data-required="1" class="form-control" value="">
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label class="control-label col-md-3" for="texto">
+                Descrição <span class="required">*</span>
+            </label>
+
+            <div class="col-md-5">
+                <textarea name="descricao" class="form-control" rows="5" id="comment"></textarea>
+            </div>
+        </div>
+
+        <input type="submit" value="Enviar"/>
+</form>

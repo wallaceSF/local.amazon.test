@@ -1,0 +1,34 @@
+<style>
+    .halfsize {
+        -moz-transform:scale(0.5);
+        -webkit-transform:scale(0.5);
+        transform:scale(0.5);
+    }
+
+</style>
+
+<?php if(empty($imoveis)){
+    echo 'Nada encontrado';
+    return;
+}?>
+
+<?php foreach ($imoveis as $index => $imovel) { ?>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $imovel['nome']?></h3>
+            </div>
+            <div class="panel-body">
+                <img class="halfsize" src="data:<?php echo $imovel['imageBase64']['contentType']?>; base64, <?php echo $imovel['imageBase64']['body']?>"/>
+                <p><?php echo $imovel['descricao']?></p>
+                <p>
+                    <a class="btn btn-success pull-right" href="#">Comprar</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+<?php } ?>
+
+

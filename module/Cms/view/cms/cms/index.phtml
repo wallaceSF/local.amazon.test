@@ -1,0 +1,75 @@
+<a href="/cms/viewCadastrar" title="Cadastrar">
+    <i class="fa fa-edit"></i>
+    <button type="button"
+            class="width-35 pull-left btn btn-sm btn-primary bootbox-options">
+        <i class="ace-icon fa fa-key"></i>
+        Cadastrar
+    </button>
+</a>
+
+<div id="excluir-mensagem"></div>
+
+<table class="table table-striped table-bordered table-hover dataTable" id="datatable_ajax" aria-describedby="datatable_ajax_info">
+    <thead>
+        <tr role="row" class="heading">
+            <th width="55%" class="sorting" role="columnheader" tabindex="0" aria-controls="datatable_ajax" rowspan="1"
+                colspan="1">
+                Título
+            </th>
+            <th width="10%" class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Ações">
+                Ações
+            </th>
+        </tr>
+    </thead>
+
+    <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+    <?php foreach ($imoveis as $index => $imovel) { ?>
+
+    <tr class="odd">
+        <td class=""><?php echo $imovel['nome']; ?></td>
+        <td class="">
+            <a href="/cms/view-editar/<?php echo $imovel['id']; ?>" title="Editar">
+                <i class="fa fa-edit"></i>
+                <button type="button"
+                        class="width-35 pull-left btn btn-sm btn-primary bootbox-options">
+                    <i class="ace-icon fa fa-key"></i>
+                    Editar
+                </button>
+            </a>
+            <button type="button" onclick="excluir(<?php echo $imovel['id']; ?>)"
+                    class="width-35 pull-left btn btn-sm btn-primary bootbox-options">
+                <i class="ace-icon fa fa-key"></i>
+                Excluir
+            </button>
+        </td>
+    </tr>
+  <?php  } ?>
+
+
+
+    <script>
+
+        function excluir(id) {
+            $.ajax({
+                url: "/cms/delete/"+id,
+                type: 'get',
+                dataType: 'html',
+                beforeSend: function () {
+                    $('#excluir-mensagem').html('<button class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>');
+                },
+                cache: false,
+                success: function (data) {
+                    $('#excluir-mensagem').html('sucesso');
+                    location.reload();
+
+                },
+                error: function (request) {
+                    $('#excluir-mensagem').html('erro');
+
+                }
+            })
+        }
+
+    </script>
+

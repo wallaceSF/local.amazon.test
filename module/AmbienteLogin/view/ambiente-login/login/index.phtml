@@ -1,0 +1,35 @@
+<form name="frmLogin" action="<?php echo $this->url(
+    'ambiente-login',
+    ['action' => 'login']
+);?>" method="POST">
+    <fieldset>
+
+        <label class="block clearfix">
+                            <span class="block input-icon input-icon-right">
+                                <input type="text" id="username" name="username" class="form-control"
+                                       placeholder="Login"/>
+
+                            </span>
+        </label>
+
+        <label class="block clearfix">
+                            <span class="block input-icon input-icon-right">
+                                <input type="password" name="password" class="form-control" placeholder="Senha"
+                                       id="password"/>
+
+                            </span>
+        </label>
+
+        <div class="space"></div>
+
+        <div class="clearfix">
+            <button type="button" onclick="document.frmLogin.submit()"
+                    class="width-35 pull-left btn btn-sm btn-primary bootbox-options">
+                <i class="ace-icon fa fa-key"></i>
+                Entrar
+            </button>
+        </div>
+
+        <div class="space-4"></div>
+    </fieldset>
+</form>
