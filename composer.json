@@ -6,11 +6,11 @@
         "framework",
         "zf2"
     ],
-    "homepage": "http://#",
+    "homepage": "http://wwww.siteprojetoaqui.com",
     "require": {
         "php": ">=5.5",
         "zendframework/zendframework": "~2.5",
         "doctrine/doctrine-orm-module": "0.8.*",
-        "aws/aws-sdk-php": "2.*"
+        "aws/aws-sdk-php": "2.*"	
     }
 }
