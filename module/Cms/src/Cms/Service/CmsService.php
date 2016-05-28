@@ -8,11 +8,6 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class CmsService {
 
-    public function cms()
-    {
-        return 'pronto';
-    }
-
     public function cadastrarImovel($serviceLocator, $data, $file)
     {
 
@@ -77,6 +72,7 @@ class CmsService {
                 throw new \Exception("Arquivo não enviado", 1);
             }
 
+            //Todo: A chave e obuckt ficar no array config
             $clientS3 = S3Client::factory(array(
                 'key'    => 'AKIAJNS3DLXBQ34MF7ZA',
                 'secret' => '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'
