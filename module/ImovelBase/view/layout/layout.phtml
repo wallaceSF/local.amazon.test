@@ -50,6 +50,14 @@
                 </ul>
             <?php } ?>
 
+            <?php if (is_null($this->sessaoUsuario)) { ?>
+                <ul class="nav navbar-nav">
+                    <li class=""><a
+                            href="<?php echo $this->url('cms') ?>">
+                            Login</a></li>
+                </ul>
+            <?php } ?>
+
         </div>
         <!--/.nav-collapse -->
     </div>

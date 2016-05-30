@@ -5,6 +5,12 @@
         transform:scale(0.5);
     }
 
+    img.resize{
+        width:89%; /* you can use % */
+        height: auto;
+    }
+
+
 </style>
 
 <?php if(empty($imoveis)){
@@ -20,7 +26,7 @@
                 <h3 class="panel-title"><?php echo $imovel['nome']?></h3>
             </div>
             <div class="panel-body">
-                <img class="halfsize" src="data:<?php echo $imovel['imageBase64']['contentType']?>; base64, <?php echo $imovel['imageBase64']['body']?>"/>
+                <center><img src="data:<?php echo $imovel['imageBase64']['contentType']?>; base64, <?php echo $imovel['imageBase64']['body']?>"  class="resize"></center>
                 <p><?php echo $imovel['descricao']?></p>
                 <p>
                     <a class="btn btn-success pull-right" href="#">Comprar</a>
